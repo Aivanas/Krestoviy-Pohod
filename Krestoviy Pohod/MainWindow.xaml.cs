@@ -90,8 +90,8 @@ namespace Krestoviy_Pohod
             }
             else if (Clicked_buttons == 9)
             {
-                //Случай если ничья
-                //не придумал
+                clear_place();
+                MessageBox.Show("Ничья, Коллега!");
             }
 
             
@@ -189,6 +189,18 @@ namespace Krestoviy_Pohod
                 is_occupied[i] = false;
                 i++;
             }
+
+            //if (player_side_krestiki == true)
+            //{
+            //    player_side_krestiki = false;
+            //    Player_side_message.Text = "Вы играете за нолики";
+            //}
+            //else if (player_side_krestiki == false)
+            //{
+            //    player_side_krestiki = true;
+            //    Player_side_message.Text = "Вы играете за крестики";
+            //}
+
         }
 
 
@@ -203,6 +215,7 @@ namespace Krestoviy_Pohod
                 if (is_occupied[rand_num-1] != true)
                 {
                     Show_clicked_button(rand_num, true);
+                    is_occupied[rand_num - 1] = true;
                     break;
                 }
             }
